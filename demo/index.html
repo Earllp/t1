@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="static/bootstrap-3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-migrate-1.4.1.js"></script>
+<script src="js/banner.js"></script> -->
+</head>
+<body>
+	<div id="top">
+		<span class="top_l">网易云课堂微专业，帮助你掌握专业技能，令你求职加薪多一份独特优势！ &nbsp; <a>立即查看></a></span>
+		<span class="top_r">不再提醒</span>
+	</div>
+	<div id="nav" class="container-fluid">
+		<span class="nav_l nav_c nav_f">EDU</span>
+		<span class="nav_l nav_f">丨</span>
+		<span class="nav_l nav_f">网易教育产品部</span>
+		<button class="nav_l nav_m">+关注</button>
+		<span class="nav_l nav_m"><a href="">粉丝 45</a></span>
+		<span class="nav_r">
+			<p>网易公开课</p>
+			<p>云课堂</p>
+			<p>中国大学MOOC</p>
+			<input type="submit" value="Submit" style="margin-left: 25px;"/><input type="text" name="user" />
+		</span>
+
+	</div>
+	<div id="banner">
+		<ul class="sildBox">
+			<li><img src="images/banner1.jpg" alt=""></li>
+			<li><img src="images/banner2.jpg" alt=""></li>
+			<li><img src="images/banner3.jpg" alt=""></li>
+		</ul>
+		<div class="spanBox">
+			<ul>
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="prev"><</div>
+		<div class="next">></div>
+	</div>
+	<div class="con">
+		<div class="con1">
+			<img src="images/nav1.png">
+			<ul>
+				<li><h3>网易公开课</h3></li>
+				<li><p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p></li>
+				<li class="con_mar"><a href="">了解更多></a></li>
+			</ul>
+			
+		</div>
+		<div class="con1">
+			<img src="images/nav2.png">
+			<ul>
+				<li><h3>云课堂</h3></li>
+				<li><p>网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程，创新的个性学习体验，自由开放的交流互动环境。</p></li>
+				<li class="con_mar"><a href="">了解更多></a></li>
+			</ul>
+		</div>
+		<div class="con1">
+			<img src="images/nav3.png">
+			<ul>
+				<li><h3>中国大学MOOC</h3></li>
+				<li><p>是爱课程网携手云课堂打造的在线学习平台，每一个有愿望的人，都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p></li>
+				<li class="con_mar"><a href="">了解更多></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="lb">
+		<img src="images/lb1.jpg">
+		<img src="images/lb2.jpg">
+		<img src="images/lb3.jpg">
+		<img src="images/lb4.jpg">
+		<img src="images/lb5.jpg">
+		<img src="images/lb1.jpg">
+		<img src="images/lb2.jpg">
+		<img src="images/lb3.jpg">
+		<img src="images/lb4.jpg">
+		<img src="images/lb5.jpg">
+	</div>
+	<button class="button">发送请求</button>
+	<script type="text/javascript">
+$(function(){
+ 			$(".button").click(function(){
+				$.ajax({
+ 					type:"GET",
+ 					url:"http://study.163.com/webDev/couresByCategory.htm",
+ 					dataType:"json",
+ 					data:{pageNo:1,psize:15,type:10},
+ 					success:function(data){
+ 						console.log(data);
+ 					}
+                      
+ 				});
+ 			});
+ 		});
+</script>
+</body>
+</html>

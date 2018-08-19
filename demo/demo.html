@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<script type="text/javascript" src="js/jquery-migrate-1.4.1.js"></script>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		ul{
+			list-style: none;
+		}
+		.a{
+			position: relative;
+			width: 200px;
+			height: 100px;
+			overflow: hidden;
+			margin:0 auto;
+		}
+		.sildBox{
+			width: 450px;
+			height: 100px;
+			position: relative;
+			
+		}
+		.sildBox li{
+			float: left;
+			position: relative;
+			width: 200px;
+			height: 100px;
+		}
+		.liBox{
+			position: absolute;
+			left: 0px;
+			top:0px;
+			z-index: 10;
+		}
+		.liBox li{
+			float: left;
+			margin-left: 20px;
+		}
+		.one{
+			width: 200px;
+			height: 100px;
+			background-color: blue;
+		}
+		.two{
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+<div class="a">
+	<ul class="sildBox">
+		<li class="one"></li>
+		<li class="two"></li>
+	</ul>
+	<ul class="liBox">
+		<li class="active">1</li>
+		<li>2</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var a = $(".a");
+		var oneWidth = a.find(".sildBox li").eq(0).width();
+		var spanBox = a.find(".liBox li");
+		var ul = a.find(".sildBox");
+		var sw = 0;
+		var timer = null;
+
+		spanBox.on("click",function(){
+			$(this).addClass("active").siblings(".liBox li").removeClass("active");
+			sw = $(this).index();
+			ul.animate({
+				"right":sw*oneWidth,
+			});
+
+		});
+		timer = setInterval(function(){
+				sw++;
+				if(sw==spanBox.length){
+					sw=0;
+				}
+				spanBox.eq(sw).trigger("click");
+			},2000)
+
+	})
+</script>
+</body>
+</html>
